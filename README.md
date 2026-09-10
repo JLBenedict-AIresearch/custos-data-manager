@@ -12,11 +12,7 @@ Out of the box, Custos is configured to process and manage Leads and FactSales i
 
 - **Strict Idempotency:** Prevents duplicate processing by hashing and comparing incoming files against a processed registry. Batch persistence is made atomic using the Unit of Work pattern, bolstered by thorough idempotency checks across the database, identity maps, and in-memory entities before any data is committed.
 
-<<<<<<< HEAD
 - **Automated Update Management:** Safely handles field updates by storing contributions as historical "snapshots" with full context. Chronological update logic is automated to protect against stale data and ensure accurate entity states. Rollbacks of updated data to a previous clean state are automated following file failure.
-=======
-- **Automated Update Management:** Safely handles field updates by storing contributions as historical "snapshots" with full context. Chronological update logic is automated to protect against stale data and ensure accurate entity states.
->>>>>>> 46d0e53248b554284a4664285111317b5385cb8e
 
 - **Resilience & Observability:** Features comprehensive event logging, custom domain exceptions, infrastructure safety wrappers, and automated alerts for system fault events.
 
@@ -24,15 +20,12 @@ Out of the box, Custos is configured to process and manage Leads and FactSales i
 
 - **Production-Ready Testing:** Backed by a comprehensive Pytest suite containing 86 unit, integration, and end-to-end tests, currently sitting at 100% passing with 89% total code coverage.
 
-<<<<<<< HEAD
 ### Architecture
 - **Domain-Driven Design:** Business logic handled by domains independently of ORMS. File is the primary aggregate root.
 - **Message Bus:** The message bus is configured with different handling for events (errors logged) and commands (errors are permitted to raise and fail loudly.) An abstract Bus allows for upgrades and extensions with message brokers.
 - **Interfaces and Adapters:** Abstract interfaces allow for flexibility as well as for the use of Fakes (largely to the exclusion of mocks) in the testing suite.
 
 
-=======
->>>>>>> 46d0e53248b554284a4664285111317b5385cb8e
 ### Tech Stack
 - **Core:** Python
 
@@ -44,7 +37,6 @@ Out of the box, Custos is configured to process and manage Leads and FactSales i
 
 - **Testing:** Pytest, pytest-cov
 
-<<<<<<< HEAD
 - **Database Migration/Revisions:** Alembic
 
 - **Security:** Cryptography (Fernet), pydantic-settings
@@ -116,6 +108,3 @@ This repo is read-only and contributions are not currently being solicited.
 ### License
 
 This code base is open-source under the MIT license, but the names "Custos" and "Custos Data Manager" are under copyright by the author.
-=======
-- **Security:** Cryptography (Fernet), pydantic-settings
->>>>>>> 46d0e53248b554284a4664285111317b5385cb8e
