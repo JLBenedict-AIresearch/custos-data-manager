@@ -57,3 +57,9 @@ class FakeFileStorageManager(AbstractFileStorageManager):
         # Default to a dummy hash, but allow tests to inject a specific one
         return self.mock_hashes.get(filepath, "fake_hash_1234567890")
     
+    def archive_files(self, file_paths: list[Path], archive_destination: Path) -> None:
+        for path in file_paths: 
+            if path not in self.known_files: 
+                raise ResourceNotFoundError(error_code="NOT_FOUN_ERR", message=f"{path} cannot be found.")
+        
+            self.known_files.add(archive_destination)
